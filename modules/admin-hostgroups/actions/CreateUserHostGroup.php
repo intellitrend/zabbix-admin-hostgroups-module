@@ -24,7 +24,7 @@ use CApiService;
 use API;
 
 /**
- * Host CSV importer module action.
+ * Admin create hostgroups module action.
  */
 class CreateUserHostGroup extends CAction {
 
