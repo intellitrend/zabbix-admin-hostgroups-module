@@ -14,7 +14,7 @@ You can find the latest versions for the respective Zabbix releases on the [Gith
 
 ## Requirements
 
-- Zabbix 5.0 to 6.0
+- Zabbix 6.0, 6.2 or 6.4
 - File write access to the Zabbix frontend server
 
 ## Installation
