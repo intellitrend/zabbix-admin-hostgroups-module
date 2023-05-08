@@ -2,7 +2,7 @@
 /**
   *
   *
-  * @version 6.0.1
+  * @version 6.1.0
   * @author Wolfgang Alper <wolfgang.alper@intellitrend.de>
   * @copyright IntelliTrend GmbH, https://www.intellitrend.de
   * @license GNU Lesser General Public License v3.0
@@ -13,14 +13,14 @@
   * However you must not change author and copyright information.  
   */
 
-$widget = (new CWidget())->setTitle(_('Host group as admin'));
+$widget = (new CHtmlPage())->setTitle(_('Host group as admin'));
 
 $form = (new CForm('post', (new CUrl('zabbix.php'))
 		->setArgument('action', 'iahg.create')
 		->getUrl())
 	)
 	->setName('hostgroupForm')
-	->setAttribute('aria-labeledby', ZBX_STYLE_PAGE_TITLE);
+	->setAttribute('aria-labeledby', ZBX_STYLE_PAGE_TITLE_SUBMENU);
 
 $type_select = (new CSelect('prefix'))
 	->setValue($data['prefix'])

@@ -1,8 +1,8 @@
 {
-	"manifest_version": 1.0,
+	"manifest_version": 2,
 	"id": "intellitrend_admin_hostgroups",
 	"name": "Create Host Groups as Zabbix Admin",
-	"version": "6.0.1",
+	"version": "6.1.0",
 	"namespace": "iahg",
 	"author": "IntelliTrend GmbH",
 	"url": "https://www.intellitrend.de/",
@@ -12,7 +12,5 @@
 			"class": "CreateUserHostGroup",
 			"view": "module.iahg"
 		}
-	},
-	"config": {
 	}
 }

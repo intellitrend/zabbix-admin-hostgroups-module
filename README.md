@@ -12,12 +12,6 @@ This software is licensed under the GNU Lesser General Public License v3.0.
 
 You can find the latest versions for the respective Zabbix releases on the [Github releases page](https://github.com/intellitrend/zabbix-admin-hostgroups-module/releases).
 
-## Changelog
-
-### Version 6.0.1
-
-* Initial release for Zabbix 5.0, 5.2, 5.4 and 6.0
-
 ## Requirements
 
 - Zabbix 5.0 to 6.0
