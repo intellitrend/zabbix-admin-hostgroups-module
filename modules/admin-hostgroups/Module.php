@@ -1,8 +1,7 @@
 <?php
 /**
-  * 
   *
-  * @version 6.1.0
+  *
   * @author Wolfgang Alper <wolfgang.alper@intellitrend.de>
   * @copyright IntelliTrend GmbH, https://www.intellitrend.de
   * @license GNU Lesser General Public License v3.0
@@ -15,11 +14,18 @@
 
 declare(strict_types = 1);
 
-namespace Modules\Iahg;
+namespace Modules\IAHG;
 
 use APP;
 use CController as CAction;
 use CWebUser;
+use CMenuItem;
+
+// alias for Zabbix 6.0
+if (!class_exists('Zabbix\Core\CModule') && class_exists('Core\CModule')) {
+	class_alias('Core\CModule', 'Zabbix\Core\CModule');
+}
+
 use Zabbix\Core\CModule;
 
 /**
@@ -35,8 +41,15 @@ class Module extends CModule {
 		if (CWebUser::isGuest() || CWebUser::getType() == USER_TYPE_ZABBIX_USER) {
 			return;
 		}
+
+		if (substr(ZABBIX_VERSION, 0, 3) == "6.0") {
+			$menu = _('Configuration');
+		} else {
+			$menu = _('Data collection');
+		}
+
 		// Initialize main menu (CMenu class instance).
-		APP::Component()->get('menu.main')->findOrAdd(_('Data collection'))->getSubmenu()->add((new \CMenuItem(_('Host group as admin')))->setAction('iahg.create'));
+		APP::Component()->get('menu.main')->findOrAdd($menu)->getSubmenu()->add((new CMenuItem(_('Host group as admin')))->setAction('iahg.create'));
 	}
 
 	/**

@@ -2,7 +2,7 @@
 
 This is a Zabbix frontend module that allows Zabbix admins without superadmin permissions to create hostgroups within their write-accessible hostgroups.
 
-![image-20220203145524547](images/image-20220203145524547.png)
+![screenshot.png](images/screenshot.png)
 
 ## License
 
@@ -14,14 +14,16 @@ You can find the latest versions for the respective Zabbix releases on the [Gith
 
 ## Requirements
 
-- Zabbix 6.0, 6.2 or 6.4
+- Zabbix 7.0+
 - File write access to the Zabbix frontend server
 
 ## Installation
 
 For Debian and Ubuntu server, the Zabbix Frontend modules are usually placed in ``/usr/share/zabbix/modules/``.
 
-Copy the folder `modules/admin-hostgroups` to `/usr/share/zabbix/modules/admin-hostgroups` on the Zabbix frontend web server.
+For Debian and Ubuntu server, the Zabbix Frontend modules are usually placed in ``/usr/share/zabbix/modules/`` (up to Zabbix 7.0) or ``/usr/share/zabbix/modules/ui/`` (Zabbix 7.2 and newer).
+
+Copy the folder `modules/admin-hostgroups` to `/usr/share/zabbix/modules/admin-hostgroups` or `/usr/share/zabbix/modules/ui/admin-hostgroups` on the Zabbix frontend web server, depending on the Zabbix version.
 
 Then go to `Administration`, `General`, `Modules`, click `Scan directory` and enable the new module in the list.
 

@@ -2,7 +2,6 @@
 /**
   *
   *
-  * @version 6.1.0
   * @author Wolfgang Alper <wolfgang.alper@intellitrend.de>
   * @copyright IntelliTrend GmbH, https://www.intellitrend.de
   * @license GNU Lesser General Public License v3.0
@@ -10,8 +9,13 @@
   * You can redistribute this library and/or modify it under the terms of
   * the GNU LGPL as published by the Free Software Foundation,
   * either version 3 of the License, or any later version.
-  * However you must not change author and copyright information.  
+  * However you must not change author and copyright information.
   */
+
+// alias for Zabbix 6.0
+if (!class_exists('CHtmlPage') && class_exists('CWidget')) {
+	class_alias('CWidget', 'CHtmlPage');
+}
 
 $widget = (new CHtmlPage())->setTitle(_('Host group as admin'));
 

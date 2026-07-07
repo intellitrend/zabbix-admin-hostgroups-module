@@ -2,7 +2,6 @@
 /**
   *
   *
-  * @version 6.1.0
   * @author Wolfgang Alper <wolfgang.alper@intellitrend.de>
   * @copyright IntelliTrend GmbH, https://www.intellitrend.de
   * @license GNU Lesser General Public License v3.0
@@ -10,12 +9,12 @@
   * You can redistribute this library and/or modify it under the terms of
   * the GNU LGPL as published by the Free Software Foundation,
   * either version 3 of the License, or any later version.
-  * However you must not change author and copyright information.  
+  * However you must not change author and copyright information.
   */
 
 declare(strict_types = 1);
 
-namespace Modules\Iahg\Actions;
+namespace Modules\IAHG\Actions;
 
 use CControllerResponseData;
 use CControllerResponseFatal;
@@ -39,7 +38,11 @@ class CreateUserHostGroup extends CAction {
 		 * modification, such as update or delete actions. In such case Session ID must be presented in the URL, so that
 		 * the URL would expire as soon as the session expired.
 		 */
-		$this->disableCsrfValidation();
+		if (method_exists($this, 'disableSIDvalidation')) {
+			$this->disableSIDvalidation();
+		} else {
+			$this->disableCsrfValidation();
+		}
 	}
 
 	/**
@@ -105,7 +108,7 @@ class CreateUserHostGroup extends CAction {
 
 	/**
 	 * Returns an array of available host group names for the current user.
-	 * 
+	 *
 	 * @return array of host group names
 	 */
 	private function getHostGroupNames() {

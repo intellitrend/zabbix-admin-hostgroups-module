@@ -1,9 +1,10 @@
 {
 	"manifest_version": 2,
 	"id": "intellitrend_admin_hostgroups",
+	"type": "module",
 	"name": "Create Host Groups as Zabbix Admin",
-	"version": "6.1.0",
-	"namespace": "iahg",
+	"version": "7.0.0",
+	"namespace": "IAHG",
 	"author": "IntelliTrend GmbH",
 	"url": "https://www.intellitrend.de/",
 	"description": "Allows non-superadmin users to create hostgroups within their write-accessible hostgroups.",
